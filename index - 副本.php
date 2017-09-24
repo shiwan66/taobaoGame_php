@@ -1,3 +1,9 @@
+<?php 
+require "vendor/autoload.php"
+include "TopSdk.php";
+
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +19,7 @@
     <link rel="apple-touch-icon" href="favicon.png">
     <link rel="Shortcut Icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./styles/style.css">
+    <script src="//g.alicdn.com/tmapp/tida2/2.2.16/tida.js?appkey=23492108"></script> 
 </head>
 
 <body class="no-skin pos-rel coming-soon">
@@ -75,13 +82,29 @@
 </body>
 <script src="/js/jquery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
-
 <script>
-    $.ajaxSetup({
-        cache: false //关闭AJAX缓存
-    });
-    $.get('http://tao.troncell.com/Taobao/getImage?imgId=<?php  echo $_GET["imgId"] ?>', function(result) {
-            console.log(result)
+var nick;
+Tida.ready({console:1}, function() {
+    Tida.isLogin(true, function() {
+        if(data.finish) {
+            alert('auth success')
+            alert(JSON.stringify(data))
+            nick = getMixNick()
+        } else {
+            alert('auth fail')
+            alert(JSON.stringify(data))
+        }
     })
+})
+function getMixNick() {
+    Tida.mixNick({}, function(data) {
+        alert(JSON.stringify(data));
+        return JSON.stringify(data);
+    })
+}
+<?php 
+    $nick="<script type=text/javascript>document.write(nick)</script>"
+    echo $nick;
+ ?>
 </script>
 </html>

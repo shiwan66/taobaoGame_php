@@ -13,6 +13,8 @@
     <link rel="apple-touch-icon" href="favicon.png">
     <link rel="Shortcut Icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./styles/style.css">
+    <script src="//g.alicdn.com/tmapp/tida/3.2.97/tida.js?appkey=23492108"></script> 
+    <!-- <script src="//g.alicdn.com/tmapp/animation-data/4.1.37/jc/tools/vconsole.min.js"></script> -->
 </head>
 
 <body class="no-skin pos-rel coming-soon">
@@ -23,7 +25,7 @@
         <div class="flex-content">
             <div class="row">
                 <div class="col-xs-8 col-xs-offset-2 text-center" style="font-size: 13px;font-weight: bold;line-height: 25px;">
-                    <img src="/img/taobaoImage/mark/avatar.png" alt="" class="img-inline" id="avatar">
+                    <img id="avatarImg" src="" alt="" class="img-inline" id="avatar">
                 </div>
             </div>
         </div>
@@ -34,7 +36,7 @@
     <div class="section img-section">
         <div class="row img-box">
             <div class="col-xs-10 col-xs-offset-1">
-                <img src="/img/taobaoImage/mark/mainImg.png" alt="" class="img-block">
+                <img id="mainImg" src="" alt="" class="img-block">
             </div>
             <div class="col-xs-10 col-xs-offset-1"  style="font-size: 11px;font-weight: bold;line-height: 16px;margin-top: 15px;">
                 <img src="/img/taobaoImage/mark/address.png" alt="" id="address-img" class="img-inline">&nbsp;&nbsp;无锡市梁溪区中山路343号大东方百货
@@ -80,8 +82,24 @@
     $.ajaxSetup({
         cache: false //关闭AJAX缓存
     });
-    $.get('http://tao.troncell.com/Taobao/getImage?imgId=<?php  echo $_GET["imgId"] ?>', function(result) {
-            console.log(result)
-    })
+    var mixNick = "";
+    Tida.ready( {
+        module : ["device", "media", "server", "social", "widget", "sensor", "share", "buy", "draw", "im", "calendar", 'award', 'ar'],
+        debug : 1,
+        combo : 0,
+        console:1
+    }, function(e) {
+        Tida.doAuth(true, function (data) {
+            if(data.finish) {
+                Tida.mixNick({}, function (d) {
+                    mixNick = d.mixnick;
+                    $.get('https://m.shiwan66.top/Taobao/getImage?imgId=<?php  echo $_GET["imgId"] ?>&mixNick='+mixNick, function(result) {
+                        $("#mainImg").attr('src', result.mainImg);
+                        $("#avatarImg").attr('src', result.avatarImg);
+                    })
+                })
+            }
+        });
+    });
 </script>
 </html>

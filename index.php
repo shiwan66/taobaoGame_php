@@ -15,64 +15,70 @@
     <link rel="stylesheet" href="./styles/style.css">
     <script src="//g.alicdn.com/tmapp/tida/3.2.97/tida.js?appkey=23492108"></script> 
     <!-- <script src="//g.alicdn.com/tmapp/animation-data/4.1.37/jc/tools/vconsole.min.js"></script> -->
+    <style>
+        html {
+            min-height: 100%;
+            background-image: url(/img/taobaoImage/mark/background01.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat repeat;
+        }
+        body {
+            background: transparent;
+        }
+        #main-box {
+            width: 276px;
+            height: 491px;
+            margin: 5px auto;
+            background-image: url(/img/taobaoImage/mark/mainImg01.png);
+            background-size: 100% 100%;
+            padding: 35px 15px ;
+            position: relative;
+        }
+        #main-img {
+            width: 247px;
+            height: 438px;
+            padding: 9px 5px;
+            box-sizing: border-box;
+        }
+        #main-img {
+            background: #fff;
+        }
+        #mainImg {
+            width: 100%;
+            height: 100%;
+        }
+        #coupon-box img{
+            width: 321px;
+            height: auto;
+            margin: 10px auto;
+        }
+        #touch-img {
+            width: 96px;
+            height: 61px;
+            bottom: 3px;
+            right: -42px;
+            position: absolute;
+        }
+    </style>
 </head>
 
 <body class="no-skin pos-rel coming-soon">
-    <div class="section flex-wrap">
-        <div class="flex-content">
-            <div class="hr"></div>
-        </div>
-        <div class="flex-content">
-            <div class="row">
-                <div class="col-xs-8 col-xs-offset-2 text-center" style="font-size: 13px;font-weight: bold;line-height: 25px;">
-                    <img id="avatarImg" src="" alt="" class="img-inline" id="avatar">
-                </div>
-            </div>
-        </div>
-        <div class="flex-content">
-            <div class="hr"></div>
-        </div>
+    <div class="section">
+        <img id="avatarImg" src="" alt="" class="img-inline" width=25 id="avatar">
     </div>
-    <div class="section img-section">
-        <div class="row img-box">
-            <div class="col-xs-10 col-xs-offset-1">
+    <div class="section">
+        <div id="main-box">
+            <!-- <img id="mainImg" src="" alt="" class="img-block"> -->
+            <div id="main-img">
                 <img id="mainImg" src="" alt="" class="img-block">
             </div>
-            <div class="col-xs-10 col-xs-offset-1"  style="font-size: 11px;font-weight: bold;line-height: 16px;margin-top: 15px;">
-                <img src="/img/taobaoImage/mark/address.png" alt="" id="address-img" class="img-inline">&nbsp;&nbsp;无锡市梁溪区中山路343号大东方百货
-            </div>
-        </div>
-    </div>
-    <div class="section row" style="background: #ececec; padding-top: 8px;padding-bottom: 8px;">
-        <div class="col-xs-6 logo2">
-            <img src="/img/taobaoImage/mark/logo2.png" alt="" class="img-inline">&nbsp;马克华菲旗舰店
-        </div>
-        <div class="col-xs-6">
-            <div class="flex-horizontal a-c">
-                <div class="btn print-btn"><img src="/img/taobaoImage/mark/print.png" alt="" class="img-inline">&nbsp;点击打印照片</div>
-                <div class="text-center" style="font-size:9px; line-height: 15px; color: #000;margin-top: 2px;">（找导购进店取您的照片）</div>
-            </div>
+            <img id="touch-img" class="img-block" src="/img/taobaoImage/mark/touch01.png" alt="">
         </div>
     </div>
     <div class="section">
-        <div class="box clearfix">
-            <div class="section text-center" style="font-size:15px;line-height: 25px; color: #85b19b;font-weight: bold;">
-                <img src="/img/taobaoImage/mark/logo.png" alt="" class="img-inline" style="margin-top: -2px;">&nbsp;推荐商品
-            </div>
-            <div class="clearfix flex-wrap" style="padding: 5px;">
-                <div class="flex-content" style="padding-left:5px;padding-right:5px;"><img src="/img/taobaoImage/mark/product1.png" alt="" class="img-block"></div>
-                <div class="flex-content" style="padding-left:5px;padding-right:5px;"><img src="/img/taobaoImage/mark/product2.png" alt="" class="img-block"></div>
-                <div class="flex-content" style="padding-left:5px;padding-right:5px;"><img src="/img/taobaoImage/mark/product3.png" alt="" class="img-block"></div>
-                <div class="flex-content" style="padding-left:5px;padding-right:5px;"><img src="/img/taobaoImage/mark/product4.png" alt="" class="img-block"></div>
-            </div>
-            <div class="section row">
-                <div class="col-xs-8 col-xs-offset-2">
-                    <a href="" style="display: block">
-                        <img src="/img/taobaoImage/mark/coupon.png" class="img-block" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
+        <a id="coupon-box" href="https://taoquan.taobao.com/coupon/unify_apply.htm?sellerId=94399436&activityId=f19449456bf04f77b21a13fe8a7fa66f">
+            <img class="img-block" src="/img/taobaoImage/mark/coupon01.png" alt="">
+        </a>
     </div>
 </body>
 <script src="/js/jquery.min.js"></script>

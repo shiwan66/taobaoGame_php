@@ -99,7 +99,7 @@
             if(data.finish) {
                 Tida.mixNick({}, function (d) {
                     mixNick = d.mixnick;
-                    $.get('https://m.shiwan66.top/Taobao/getImage?imgId=<?php  echo $_GET["imgId"] ?>&mixNick='+mixNick, function(result) {
+                    $.get('https://m.shiwan66.top/Taobao/getImage?imgId=<?php  echo $_GET['imgId'] ?>&mixNick='+mixNick, function(result) {
                         $("#mainImg").attr('src', result.mainImg);
                         $("#avatarImg").attr('src', result.avatarImg);
                     })
